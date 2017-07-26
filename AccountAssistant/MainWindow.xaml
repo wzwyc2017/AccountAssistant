@@ -4,9 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccountAssistant"
+        xmlns:d3="http://research.microsoft.com/DynamicDataDisplay/1.0"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="记账助手" Height="350" Width="525" Icon="App.ico">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem x:Name="menuAddBalanceInfo" Header="添加余额信息" Click="menuAddBalanceInfo_Click"/>
+            <MenuItem x:Name="menuAddAccountInfo" Header="添加新账户" Click="menuAddAccountInfo_Click"/>
+            <MenuItem x:Name="menuAccountList" Header="账户列表" Click="menuAccountList_Click"/>
+            <MenuItem x:Name="menuSetting" Header="设置" Click="menuSetting_Click"/>
+        </Menu>
+        <d3:ChartPlotter Name="plotter" Grid.Row="1">
+        </d3:ChartPlotter>
     </Grid>
 </Window>

@@ -1,0 +1,54 @@
+﻿<Window x:Class="AccountAssistant.WinSetting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccountAssistant"
+        mc:Ignorable="d" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Style="{StaticResource windowsStyle}"
+        Title="设置" Height="400" Width="300" SizeToContent="Height" ShowInTaskbar="False" Icon="App.ico">
+    <Grid Margin="6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="数据库类型：" Style="{StaticResource textBlockStyle}"/>
+                <RadioButton x:Name="rbSQLite" Content="SQLite" Style="{StaticResource radioButtonStyle}" Checked="rbSQLite_Checked"/>
+                <RadioButton x:Name="rbMySQL" Content="MySQL" Style="{StaticResource radioButtonStyle}" Checked="rbMySQL_Checked"/>
+            </StackPanel>
+            <GroupBox x:Name="groupBoxMySQL" Header="MySQL数据库：" Style="{StaticResource groupBoxStyle}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="数据库IP：" HorizontalAlignment="Right" Style="{StaticResource textBlockStyle}" />
+                    <TextBlock Text="数据库端口：" HorizontalAlignment="Right" Style="{StaticResource textBlockStyle}" Grid.Row="1" />
+                    <TextBlock Text="用户名：" HorizontalAlignment="Right" Style="{StaticResource textBlockStyle}" Grid.Row="2" />
+                    <TextBlock Text="密码：" HorizontalAlignment="Right" Style="{StaticResource textBlockStyle}" Grid.Row="3" />
+                    <TextBlock Text="数据库名：" HorizontalAlignment="Right" Style="{StaticResource textBlockStyle}" Grid.Row="4" />
+                    <TextBox x:Name="tbMySqlIPAddr" Grid.Column="1" Grid.Row="0" Style="{StaticResource textBoxStyle}" />
+                    <TextBox x:Name="tbMySqlPort" Grid.Column="1" Grid.Row="1" Style="{StaticResource textBoxStyle}" />
+                    <TextBox x:Name="tbMySqlUser" Grid.Column="1" Grid.Row="2" Style="{StaticResource textBoxStyle}" />
+                    <TextBox x:Name="tbMySqlPassword" Grid.Column="1" Grid.Row="3" Style="{StaticResource textBoxStyle}" />
+                    <TextBox x:Name="tbMySqlDbName" Grid.Column="1" Grid.Row="4" Style="{StaticResource textBoxStyle}" />
+                </Grid>
+            </GroupBox>
+            <CheckBox x:Name="chkTopmost" Content="窗体置顶" Style="{StaticResource checkBoxStyle}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <Button x:Name="btnOK" Content="确定" Style="{StaticResource buttonStyle}" Click="btnOK_Click" IsDefault="True"/>
+            <Button x:Name="btnCancel" Content="取消" Style="{StaticResource buttonStyle}" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+
+</Window>
