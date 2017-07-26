@@ -12,7 +12,7 @@ namespace AccountAssistant
     {
         public static System.Windows.Media.Color GetRandomColor(int index)
         {
-            Color[] items = new Color[] { Colors.Green, Colors.Red, Colors.Blue, Colors.Brown, Colors.Aqua, Colors.DarkRed };
+            Color[] items = new Color[] { Colors.Red, Colors.Green, Colors.Blue, Color.FromRgb(200, 200, 0), Color.FromRgb(200, 0, 200), Color.FromRgb(0, 200, 200) };
 
             if (index >= 0 || index < items.Length)
             {
